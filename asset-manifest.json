@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/khla-khlouk/static/css/main.5741f830.css",
+    "main.js": "/khla-khlouk/static/js/main.f5e6fb83.js",
+    "static/media/dish.png": "/khla-khlouk/static/media/dish.7e4a47053f25ecfc16ee.png",
+    "static/media/bongkong.png": "/khla-khlouk/static/media/bongkong.685bbeeae8370ee0fa10.png",
+    "static/media/khla.png": "/khla-khlouk/static/media/khla.8ffd981f1f38bed03a6f.png",
+    "static/media/trey.png": "/khla-khlouk/static/media/trey.b3d05e150179fc8efe12.png",
+    "static/media/man.png": "/khla-khlouk/static/media/man.d8a26a3f60e195223832.png",
+    "static/media/kdam.png": "/khla-khlouk/static/media/kdam.0ed45d79b98b03aa4fa2.png",
+    "static/media/khlouk.png": "/khla-khlouk/static/media/khlouk.314043544ae60327b9ba.png",
+    "static/media/platecover.png": "/khla-khlouk/static/media/platecover.d9b0d13adff184f018dd.png",
+    "index.html": "/khla-khlouk/index.html",
+    "main.5741f830.css.map": "/khla-khlouk/static/css/main.5741f830.css.map",
+    "main.f5e6fb83.js.map": "/khla-khlouk/static/js/main.f5e6fb83.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5741f830.css",
+    "static/js/main.f5e6fb83.js"
+  ]
+}
