@@ -16,11 +16,14 @@ const Display = () => {
   return (
     <div>
       <input type="text" id='selectedAmount' value={selectedAmount} className='hidden' />
-      <div id='selectAmount' className='absolute left-0 sm:left-16 top-6 flex 
+      <div id='selectAmount' className='absolute left-0 sm:left-16 -top-4 flex 
       flex-col rounded-lg text-white font-extrabold
       bg-gradient-to-r from-sky-400 to-blue-500'>
+        <h1
+           className='font-extralight text-black rounded-t-lg p-2 text-center border-b-[1px] rounded-b'
+        >ចាក់ម្តង</h1>        
         <p id='op1'
-          className={`rounded-t-lg ${optionSelected === 'op1' ? 'bg-[#95c2ee] text-black' : ''}`}
+          className={`${optionSelected === 'op1' ? 'bg-[#95c2ee] text-black' : ''}`}
           onClick={() => {
             setOptionSelected('op1')
             setSelectedAmount(document.getElementById('op1').innerHTML)
@@ -56,7 +59,7 @@ const Display = () => {
         >១០,០០០៛</p>
       </div>
       <div
-        className={`p-16 flex flex-col items-center relative
+        className={`p-16 flex flex-col items-center relative max-sm:ml-24
     space-y-1 cursor-pointer ${shake ? 'animate-shake-items' : ''}`}>
         <LazyLoadImage
           onClick={() => {

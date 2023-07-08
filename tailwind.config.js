@@ -19,6 +19,10 @@ module.exports = {
       'shake-items': 'wave 0.83s linear',
     },
   },
+  fontFamily: {
+    'moul': ['Moul', 'sans-serif'],
+    'MyFont': ['"My Font"', 'serif'] // Ensure fonts with spaces have " " surrounding it.
+  },
 },
   plugins: [],
   darkMode: 'class',
