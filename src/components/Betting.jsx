@@ -6,6 +6,41 @@ import kdam from "../images/kdam.png"
 import trey from "../images/trey.png"
 import bongkong from "../images/bongkong.png"
 import man from "../images/man.png"
+var khmerNumbers = ['០','១','២','៣','៤','៥','៦','៧','៨','៩'];
+function convertKhmerNumberToLatinNumber(khNumbers) {
+  var latinNumber = '';
+  for( var i = 0;i<khNumbers.length; i++) {
+    latinNumber+= khToLatinNum(khNumbers[i])
+  }
+  return latinNumber;
+}
+
+function khToLatinNum( khNum ) {
+
+  if( khNum.includes('៛') || khNum.includes(',') ) return '';
+
+  for( var i =0 ; i<khmerNumbers.length; i++) {
+    if(khNum ===khmerNumbers[i])
+    return i;
+  }
+}
+
+var selectedMoney = '';
+
+const increaseAmount = (id) => {
+  selectedMoney = convertKhmerNumberToLatinNumber( document.getElementById("selectedAmount").value)
+  var object = document.getElementById(id);
+  var betValue = object.innerHTML;
+  object.innerHTML = parseInt(betValue) + parseInt(selectedMoney);
+}
+
+const decreaseAmount = (id) => {
+  selectedMoney = convertKhmerNumberToLatinNumber( document.getElementById("selectedAmount").value)
+  var object = document.getElementById(id);
+  var betValue = object.innerHTML;
+  if (betValue === '0') return;
+  object.innerHTML = parseInt(betValue) - parseInt(selectedMoney);
+}
 
 const Betting = () => {
   return (
@@ -13,42 +48,53 @@ const Betting = () => {
       <table>
         <tr>
           <td>
-            <LazyLoadImage
-              src={khla}
-              alt="Khla"
+            <img src={khla} alt="khla.png"
+              className="h-28 object-contain cursor-pointer active:scale-150 duration-300"
+              onClick={()=>{
+                increaseAmount('betKhla')
+              }}
             />
+            <div className='betting flex justify-between'>
+              <button onClick={() => {
+                decreaseAmount('betKhla')
+              }}>-</button>
+              <p id='betKhla'>0</p>
+              <button onClick={() => {
+                increaseAmount('betKhla')
+              }}>+</button>
+            </div>
           </td>
           <td>
-            <LazyLoadImage
-              src={khlouk}
-              alt="Khlouk"
+            <img src={khlouk} alt="khlouk.png"
+              className="h-28 object-contain"
             />
+            <p className='betting'>0</p>
           </td>
           <td>
-            <LazyLoadImage
-              src={man}
-              alt="Man"
+            <img src={man} alt="man.png"
+              className="h-28 object-contain"
             />
+            <p className='betting'>0</p>
           </td>
         </tr>
         <tr>
           <td>
-            <LazyLoadImage
-              src={bongkong}
-              alt="BongKong"
+            <img src={bongkong} alt="bongkong.png"
+              className="h-28 object-contain"
             />
+            <p className='betting'>0</p>
           </td>
           <td>
-            <LazyLoadImage
-              src={trey}
-              alt="Trey"
+            <img src={trey} alt="trey.png"
+              className="h-28 object-contain"
             />
+            <p className='betting'>0</p>
           </td>
           <td>
-            <LazyLoadImage
-              src={kdam}
-              alt="Kdam"
+            <img src={kdam} alt="kdam.png"
+              className="h-28 object-contain"
             />
+            <p className='betting'>0</p>
           </td>
         </tr>
       </table>
