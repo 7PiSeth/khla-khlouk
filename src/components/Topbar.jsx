@@ -45,12 +45,11 @@ const TopBar = () => {
           ></div>
         </div>
       </div>
-      <div className="absolute right-7 sm:left-[calc(53%)] top-[14px] flex items-center
+      <div className="absolute right-7 sm:left-[calc(53%)] top-[12px] flex place-items-center
       rounded-lg text-white font-extrabold w-fit
       bg-gradient-to-b from-sky-400 to-blue-800">
-        {/* <p className="w-14 font-moul p-1 font-extralight text-center">ប្រាក់</p> */}
-        <GiTakeMyMoney size={35} className="p-1"  />
-        <p id="money" className="rounded-r-lg p-1 font-moul bg-[#95c2ee] text-black">១,០០០៛</p>
+        <GiTakeMyMoney size={35} className="p-1"/>
+        <p id="userMoney" className="rounded-r-[7px] min-w-[65px] text-center p-[6px] font-moul bg-[#95c2ee] text-black">១០០០៛</p>
       </div>
     </div>
   )

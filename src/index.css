@@ -11,8 +11,13 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
-  #selectAmount {
+  #selectAmount, .betting>p {
     font-family: "Moul", sans-serif;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .betting>p {
+    font-family: "Content", sans-serif;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }

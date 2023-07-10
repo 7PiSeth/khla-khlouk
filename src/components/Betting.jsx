@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import khla from "../images/khla.png"
 import khlouk from "../images/khlouk.png"
@@ -6,40 +6,60 @@ import kdam from "../images/kdam.png"
 import trey from "../images/trey.png"
 import bongkong from "../images/bongkong.png"
 import man from "../images/man.png"
-var khmerNumbers = ['០','១','២','៣','៤','៥','៦','៧','៨','៩'];
-function convertKhmerNumberToLatinNumber(khNumbers) {
-  var latinNumber = '';
-  for( var i = 0;i<khNumbers.length; i++) {
-    latinNumber+= khToLatinNum(khNumbers[i])
+
+var khmerNumberArr = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'];
+function convertLatinNumToKhNum(latinNumbers) {
+  latinNumbers = latinNumbers + ''; // convert to string
+  var khNumbers = '';
+  for (var i = 0; i < latinNumbers.length; i++) {
+    if (latinNumbers[i] === '.') {
+      khNumbers += '.';
+      continue;
+    }
+    khNumbers += khmerNumberArr[latinNumbers[i]];
   }
-  return latinNumber;
+  return khNumbers;
 }
 
-function khToLatinNum( khNum ) {
-
-  if( khNum.includes('៛') || khNum.includes(',') ) return '';
-
-  for( var i =0 ; i<khmerNumbers.length; i++) {
-    if(khNum ===khmerNumbers[i])
-    return i;
+function convertKhNumToLatinNum(khNumbers) {
+  var latinNumbers = '';
+  for (var i = 0; i < khNumbers.length; i++) {
+    for (var j = 0; j < khmerNumberArr.length; j++) {
+      if (khNumbers[i] === '៛') break;
+      if (khNumbers[i] === '.') {
+        latinNumbers += '.';
+        break;
+      }
+      if (khNumbers[i] === khmerNumberArr[j]) {
+        latinNumbers += j;
+        break;
+      }
+    }
   }
+  return latinNumbers;
 }
 
-var selectedMoney = '';
-
-const increaseAmount = (id) => {
-  selectedMoney = convertKhmerNumberToLatinNumber( document.getElementById("selectedAmount").value)
-  var object = document.getElementById(id);
-  var betValue = object.innerHTML;
-  object.innerHTML = parseInt(betValue) + parseInt(selectedMoney);
+function increaseAmount(id) {
+  var selectedAmount = parseInt(document.getElementById("selectedAmount").value);
+  var shake = document.getElementById("shake").value;
+  var bettingObj = document.getElementById(id);
+  var userMoneyObj = document.getElementById('userMoney');
+  var userMoneyKh = userMoneyObj.innerHTML;
+  var latinNums = convertKhNumToLatinNum(bettingObj.innerHTML);
+  if ((parseInt(convertKhNumToLatinNum(userMoneyKh)) - selectedAmount) < 0 || shake==='false') return;
+  bettingObj.innerHTML = convertLatinNumToKhNum(parseInt(latinNums) + selectedAmount);
+  userMoneyObj.innerHTML = convertLatinNumToKhNum((parseInt(convertKhNumToLatinNum(userMoneyKh)) - selectedAmount))+'៛';
 }
-
-const decreaseAmount = (id) => {
-  selectedMoney = convertKhmerNumberToLatinNumber( document.getElementById("selectedAmount").value)
-  var object = document.getElementById(id);
-  var betValue = object.innerHTML;
-  if (betValue === '0') return;
-  object.innerHTML = parseInt(betValue) - parseInt(selectedMoney);
+function decreaseAmount(id) {
+  var selectedAmount = parseInt(document.getElementById("selectedAmount").value);
+  var shake = document.getElementById("shake").value;
+  var bettingObj = document.getElementById(id);
+  var userMoneyObj = document.getElementById('userMoney');
+  var userMoneyKh = userMoneyObj.innerHTML;
+  var latinNums = convertKhNumToLatinNum(bettingObj.innerHTML);
+  if (parseInt(latinNums) - selectedAmount < 0 || shake==='false') return;
+  bettingObj.innerHTML = convertLatinNumToKhNum(parseInt(latinNums) - selectedAmount);
+  userMoneyObj.innerHTML = convertLatinNumToKhNum((parseInt(convertKhNumToLatinNum(userMoneyKh)) + selectedAmount))+'៛';
 }
 
 const Betting = () => {
@@ -50,7 +70,7 @@ const Betting = () => {
           <td>
             <img src={khla} alt="khla.png"
               className="h-28 object-contain cursor-pointer active:scale-150 duration-300"
-              onClick={()=>{
+              onClick={() => {
                 increaseAmount('betKhla')
               }}
             />
@@ -58,7 +78,7 @@ const Betting = () => {
               <button onClick={() => {
                 decreaseAmount('betKhla')
               }}>-</button>
-              <p id='betKhla'>0</p>
+              <p id='betKhla'>០</p>
               <button onClick={() => {
                 increaseAmount('betKhla')
               }}>+</button>
@@ -66,35 +86,90 @@ const Betting = () => {
           </td>
           <td>
             <img src={khlouk} alt="khlouk.png"
-              className="h-28 object-contain"
+              className="h-28 object-contain cursor-pointer active:scale-150 duration-300"
+              onClick={() => {
+                increaseAmount('betKhlouk')
+              }}
             />
-            <p className='betting'>0</p>
+            <div className='betting flex justify-between'>
+              <button onClick={() => {
+                decreaseAmount('betKhlouk')
+              }}>-</button>
+              <p id='betKhlouk'>០</p>
+              <button onClick={() => {
+                increaseAmount('betKhlouk')
+              }}>+</button>
+            </div>
           </td>
           <td>
             <img src={man} alt="man.png"
-              className="h-28 object-contain"
+              className="h-28 object-contain cursor-pointer active:scale-150 duration-300"
+              onClick={() => {
+                increaseAmount('betMan')
+              }}
             />
-            <p className='betting'>0</p>
+            <div className='betting flex justify-between'>
+              <button onClick={() => {
+                decreaseAmount('betMan')
+              }}>-</button>
+              <p id='betMan'>០</p>
+              <button onClick={() => {
+                increaseAmount('betMan')
+              }}>+</button>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <img src={bongkong} alt="bongkong.png"
-              className="h-28 object-contain"
+              className="h-28 object-contain cursor-pointer active:scale-150 duration-300"
+              onClick={() => {
+                increaseAmount('betBongKong')
+              }}
             />
-            <p className='betting'>0</p>
+            <div className='betting flex justify-between'>
+              <button onClick={() => {
+                decreaseAmount('betBongKong')
+              }}>-</button>
+              <p id='betBongKong'>០</p>
+              <button onClick={() => {
+                increaseAmount('betBongKong')
+              }}>+</button>
+            </div>
           </td>
           <td>
             <img src={trey} alt="trey.png"
-              className="h-28 object-contain"
+              className="h-28 object-contain cursor-pointer active:scale-150 duration-300"
+              onClick={() => {
+                increaseAmount('betTrey')
+              }}
             />
-            <p className='betting'>0</p>
+            <div className='betting flex justify-between'>
+              <button onClick={() => {
+                decreaseAmount('betTrey')
+              }}>-</button>
+              <p id='betTrey'>០</p>
+              <button onClick={() => {
+                increaseAmount('betTrey')
+              }}>+</button>
+            </div>
           </td>
           <td>
             <img src={kdam} alt="kdam.png"
-              className="h-28 object-contain"
+              className="h-28 object-contain cursor-pointer active:scale-150 duration-300"
+              onClick={() => {
+                increaseAmount('betKdam')
+              }}
             />
-            <p className='betting'>0</p>
+            <div className='betting flex justify-between'>
+              <button onClick={() => {
+                decreaseAmount('betKdam')
+              }}>-</button>
+              <p id='betKdam'>០</p>
+              <button onClick={() => {
+                increaseAmount('betKdam')
+              }}>+</button>
+            </div>
           </td>
         </tr>
       </table>
