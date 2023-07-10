@@ -51,13 +51,13 @@ function settledBet() {
   if (resultArr[0] === resultArr[1] === resultArr[2]) {
     totalPayAmount = betMoney0 * 4;
   } else if (resultArr[0] === resultArr[1]) {
-    totalPayAmount = (betMoney0 * 3) + betMoney2*2;
+    totalPayAmount = (betMoney0 * 3) + (betMoney2*2);
   } else if (resultArr[0] === resultArr[2]) {
-    totalPayAmount = (betMoney0 * 3) + betMoney1 *2;
+    totalPayAmount = (betMoney0 * 3) + (betMoney1 *2);
   } else if (resultArr[1] === resultArr[2]) {
-    totalPayAmount = (betMoney1 * 3) + betMoney0 *2;
+    totalPayAmount = (betMoney1 * 3) + (betMoney0 *2);
   } else {
-    totalPayAmount = (betMoney0 + betMoney1 + betMoney2) * 2;
+    totalPayAmount = ( (betMoney0 + betMoney1 + betMoney2) * 2 );
   }
   userMoneyObj.innerHTML = convertArabicNumToKhNum( userMoney + totalPayAmount) + '៛';
 }
