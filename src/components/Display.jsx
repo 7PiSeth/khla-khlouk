@@ -45,19 +45,19 @@ function settledBet() {
   var totalPayAmount = 0;
   var userMoneyObj = document.getElementById('userMoney');
   var userMoney = parseInt(convertKhNumToArabicNum(userMoneyObj.innerHTML));
-  var betMoney1 = parseInt(convertKhNumToArabicNum(document.getElementById(bettingArr[resultArr[0]]).innerHTML))
-  var betMoney2 = parseInt(convertKhNumToArabicNum(document.getElementById(bettingArr[resultArr[1]]).innerHTML))
-  var betMoney3 = parseInt(convertKhNumToArabicNum(document.getElementById(bettingArr[resultArr[2]]).innerHTML))
+  var betMoney0 = parseInt(convertKhNumToArabicNum(document.getElementById(bettingArr[resultArr[0]]).innerHTML))
+  var betMoney1 = parseInt(convertKhNumToArabicNum(document.getElementById(bettingArr[resultArr[1]]).innerHTML))
+  var betMoney2 = parseInt(convertKhNumToArabicNum(document.getElementById(bettingArr[resultArr[2]]).innerHTML))
   if (resultArr[0] === resultArr[1] === resultArr[2]) {
-    totalPayAmount = betMoney1 * 4;
+    totalPayAmount = betMoney0 * 4;
   } else if (resultArr[0] === resultArr[1]) {
-    totalPayAmount = betMoney1 * 3;
+    totalPayAmount = (betMoney0 * 3) + betMoney2*2;
   } else if (resultArr[0] === resultArr[2]) {
-    totalPayAmount = betMoney1 * 3;
+    totalPayAmount = (betMoney0 * 3) + betMoney1 *2;
   } else if (resultArr[1] === resultArr[2]) {
-    totalPayAmount = betMoney1 * 3;
+    totalPayAmount = (betMoney1 * 3) + betMoney0 *2;
   } else {
-    totalPayAmount = (betMoney1 + betMoney2 + betMoney3) * 2;
+    totalPayAmount = (betMoney0 + betMoney1 + betMoney2) * 2;
   }
   userMoneyObj.innerHTML = convertArabicNumToKhNum( userMoney + totalPayAmount) + '៛';
 }
