@@ -33,7 +33,7 @@
     @apply mx-3 md:mx-5 md:hover:opacity-70;
   }
   #selectAmount > p {
-    @apply w-full p-3 text-center cursor-pointer active:scale-150 duration-200;
+    @apply w-full p-3 text-center cursor-pointer active:scale-150 duration-300;
   }
 }
 

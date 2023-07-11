@@ -52,7 +52,7 @@ const TopBar = () => {
         <GiTakeMyMoney size={35} className="p-1"/>
         <p id="userMoney" className="rounded-r-[7px] min-w-[65px] text-center p-[6px] font-moul bg-[#95c2ee] text-black">១០០០៛</p>
       </div>
-      <div className="absolute left-0 sm:left-[calc(39%)] top-[12px] flex place-items-center cursor-pointer active:scale-150 duration-100
+      <div className="absolute left-0 sm:left-[calc(39%)] top-[12px] flex place-items-center cursor-pointer active:scale-150 duration-300
       rounded-lg text-white font-extrabold w-fit
       bg-gradient-to-b from-sky-400 to-blue-800"
       onClick={()=>{
