@@ -99,7 +99,7 @@ const Display = () => {
     <div>
       <input type="text" id='selectedAmount' value={selectedAmount} className='hidden' /> {/* use to store value as global */}
       <input type="text" id='shake' value={shake} className='hidden' /> {/* use to store value as global */}
-      <div id='selectAmount' className='absolute left-0 sm:left-16 -top-4 flex 
+      <div id='selectAmount' className='absolute left-0 sm:left-16 flex 
       flex-col rounded-lg text-white font-extrabold
       bg-gradient-to-r from-sky-400 to-blue-500'>
         <h1

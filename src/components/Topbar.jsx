@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaSun } from "react-icons/fa";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { GiTakeMyMoney } from "react-icons/gi";
+import { VscDebugRestart } from "react-icons/vsc";
 
 const TopBar = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -50,6 +51,15 @@ const TopBar = () => {
       bg-gradient-to-b from-sky-400 to-blue-800">
         <GiTakeMyMoney size={35} className="p-1"/>
         <p id="userMoney" className="rounded-r-[7px] min-w-[65px] text-center p-[6px] font-moul bg-[#95c2ee] text-black">១០០០៛</p>
+      </div>
+      <div className="absolute left-0 sm:left-[calc(39%)] top-[12px] flex place-items-center cursor-pointer active:scale-150 duration-100
+      rounded-lg text-white font-extrabold w-fit
+      bg-gradient-to-b from-sky-400 to-blue-800"
+      onClick={()=>{
+        document.getElementById("userMoney").innerHTML = '១០០០៛'
+      }}>
+        <VscDebugRestart size={35} className="p-1"/>
+        <p id="userMoney" className="rounded-r-[7px] min-w-[65px] text-center p-[6px] bg-[#95c2ee] text-black font-extralight font-moul">លេងម្តងទៀត</p>
       </div>
     </div>
   )

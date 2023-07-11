@@ -21,7 +21,7 @@ module.exports = {
   },
   fontFamily: {
     'moul': ['Moul', 'sans-serif'],
-    'MyFont': ['"My Font"', 'serif'] // Ensure fonts with spaces have " " surrounding it.
+    'content': ['Content', 'serif'] // Ensure fonts with spaces have " " surrounding it.
   },
 },
   plugins: [],
