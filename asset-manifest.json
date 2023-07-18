@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/khla-khlouk/static/css/main.0bdbb6e1.css",
-    "main.js": "/khla-khlouk/static/js/main.f9d8baf5.js",
+    "main.css": "/khla-khlouk/static/css/main.269f9869.css",
+    "main.js": "/khla-khlouk/static/js/main.79d1d1cf.js",
     "static/media/dish.png": "/khla-khlouk/static/media/dish.7e4a47053f25ecfc16ee.png",
     "static/media/bongkong.png": "/khla-khlouk/static/media/bongkong.685bbeeae8370ee0fa10.png",
     "static/media/khla.png": "/khla-khlouk/static/media/khla.8ffd981f1f38bed03a6f.png",
@@ -11,11 +11,11 @@
     "static/media/khlouk.png": "/khla-khlouk/static/media/khlouk.314043544ae60327b9ba.png",
     "static/media/platecover.png": "/khla-khlouk/static/media/platecover.d9b0d13adff184f018dd.png",
     "index.html": "/khla-khlouk/index.html",
-    "main.0bdbb6e1.css.map": "/khla-khlouk/static/css/main.0bdbb6e1.css.map",
-    "main.f9d8baf5.js.map": "/khla-khlouk/static/js/main.f9d8baf5.js.map"
+    "main.269f9869.css.map": "/khla-khlouk/static/css/main.269f9869.css.map",
+    "main.79d1d1cf.js.map": "/khla-khlouk/static/js/main.79d1d1cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bdbb6e1.css",
-    "static/js/main.f9d8baf5.js"
+    "static/css/main.269f9869.css",
+    "static/js/main.79d1d1cf.js"
   ]
 }
