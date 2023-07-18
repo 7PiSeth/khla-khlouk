@@ -53,7 +53,7 @@ const TopBar = () => {
           document.getElementById("userMoney").innerHTML = '១០០០៛'
         }}>
         <VscDebugRestart size={35} className="p-1" />
-        <p id="userMoney" className="max-[300px]:hidden rounded-r-[7px] min-w-[65px] text-center p-[6px] bg-[#95c2ee] text-black font-extralight font-moul">លេងម្តងទៀត</p>
+        <p className="max-[300px]:hidden rounded-r-[7px] min-w-[65px] text-center p-[6px] bg-[#95c2ee] text-black font-extralight font-moul">លេងម្តងទៀត</p>
       </div>
       <div className="absolute right-7 max-[400px]:right-0 sm:right-[calc(50%-190px)] top-[12px] flex place-items-center
       rounded-lg text-white font-extrabold w-fit
