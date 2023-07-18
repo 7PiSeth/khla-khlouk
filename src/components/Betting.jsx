@@ -64,7 +64,7 @@ function decreaseAmount(id) {
 
 const Betting = () => {
   return (
-    <div>
+    <div className='mt-5 mb-[80px]'>
       <table>
         <tr>
           <td>

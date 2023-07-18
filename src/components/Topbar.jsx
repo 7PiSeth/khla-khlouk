@@ -15,7 +15,7 @@ const TopBar = () => {
   }, [darkMode]);
 
   return (
-    <div className={`w-screen h-[60px] px-5 md:px-7 flex justify-between items-center`}>
+    <div className={`h-[60px] px-5 md:px-7 flex justify-between items-center`}>
       <div className="absolute select-none left-[calc(50%-41px)]">
         <div className="relative w-20 bg-slate-300 dark:bg-slate-800 group rounded-full flex items-center cursor-pointer">
           <div

@@ -96,7 +96,7 @@ const Display = () => {
   const [optionSelected, setOptionSelected] = useState('op1')
   const [selectedAmount, setSelectedAmount] = useState(100)
   return (
-    <div>
+    <div className='mt-3'>
       <input type="text" id='selectedAmount' value={selectedAmount} className='hidden' /> {/* use to store value as global */}
       <input type="text" id='shake' value={shake} className='hidden' /> {/* use to store value as global */}
       <div id='selectAmount' className='absolute left-0 sm:left-16 flex 
