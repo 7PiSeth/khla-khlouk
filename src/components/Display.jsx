@@ -142,7 +142,7 @@ const Display = () => {
         >១០,០០០៛</p>
       </div>
       <div
-        className={`p-16 flex flex-col items-center relative
+        className={`p-16 flex flex-col items-center relative max-[450px]:ml-20
           space-y-1 active:cursor-grabbing hover:cursor-grab ${shake ? 'animate-shake-items' : ''}`}>
         <LazyLoadImage
           onClick={() => {
